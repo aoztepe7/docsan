@@ -1,0 +1,17 @@
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\bin\Debug\net6.0\DOCSAN.APPLICATION.deps.json
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\bin\Debug\net6.0\DOCSAN.APPLICATION.dll
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\bin\Debug\net6.0\DOCSAN.APPLICATION.pdb
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\bin\Debug\net6.0\DOCSAN.CORE.dll
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\bin\Debug\net6.0\DOCSAN.SHARED.dll
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\bin\Debug\net6.0\DOCSAN.CORE.pdb
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\bin\Debug\net6.0\DOCSAN.SHARED.pdb
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\obj\Debug\net6.0\DOCSAN.APPLICATION.csproj.AssemblyReference.cache
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\obj\Debug\net6.0\DOCSAN.APPLICATION.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\obj\Debug\net6.0\DOCSAN.APPLICATION.AssemblyInfoInputs.cache
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\obj\Debug\net6.0\DOCSAN.APPLICATION.AssemblyInfo.cs
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\obj\Debug\net6.0\DOCSAN.APPLICATION.csproj.CoreCompileInputs.cache
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\obj\Debug\net6.0\DOCSAN.APPLICATION.csproj.CopyComplete
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\obj\Debug\net6.0\DOCSAN.APPLICATION.dll
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\obj\Debug\net6.0\refint\DOCSAN.APPLICATION.dll
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\obj\Debug\net6.0\DOCSAN.APPLICATION.pdb
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.APPLICATION\obj\Debug\net6.0\ref\DOCSAN.APPLICATION.dll
