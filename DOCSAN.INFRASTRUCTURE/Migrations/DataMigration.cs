@@ -18,6 +18,7 @@ namespace DOCSAN.INFRASTRUCTURE.Migrations
 
         private void SeedUsers()
         {
+
             Insert.IntoTable("Users")
                 .Row(new
                 {
