@@ -1,6 +1,8 @@
 ﻿using Dapper;
+using DOCSAN.APPLICATION.Dtos;
 using DOCSAN.APPLICATION.Interfaces;
 using DOCSAN.CORE.Entities;
+using DOCSAN.SHARED.Utils;
 using Microsoft.Extensions.Configuration;
 using System.Data;
 
@@ -13,8 +15,8 @@ namespace DOCSAN.INFRASTRUCTURE.Repositories
         }
         public async Task<Guid> AddAsync(User entity)
         {
-            string tSql = @"insert into Users (Id,Created,CreatedBy,Status,Deleted,Mail,Password,Role)
-                           values (@Id,@Created,@CreatedBy,@Status,@Deleted,@Mail,@Password,@Role)";
+            string tSql = @"insert into Users (Id,Created,CreatedBy,Status,Deleted,Mail,Password,Role,FirstName,LastName,BirthDate,Gender)
+                           values (@Id,@Created,@CreatedBy,@Status,@Deleted,@Mail,@Password,@Role,@FirstName,@LastName,@BirthDate,@Gender)";
 
             var parameters = new DynamicParameters();
             parameters.Add("Id", entity.Id, DbType.Guid);
@@ -25,6 +27,10 @@ namespace DOCSAN.INFRASTRUCTURE.Repositories
             parameters.Add("Mail", entity.Mail, DbType.String);
             parameters.Add("Password", entity.Password, DbType.String);
             parameters.Add("Role", entity.Role, DbType.Byte);
+            parameters.Add("FirstName", entity.FirstName, DbType.String);
+            parameters.Add("LastName", entity.LastName, DbType.String);
+            parameters.Add("BirthDate", entity.BirthDate, DbType.DateTime);
+            parameters.Add("Gender", entity.Gender, DbType.Byte);
           
             await base.ExecuteAsync(tSql, parameters);
             return entity.Id;
@@ -34,6 +40,23 @@ namespace DOCSAN.INFRASTRUCTURE.Repositories
         {
             string tSql = @"update Users set Deleted=1,LastModified=@LastModified,LastModifiedBy=@LastModifiedBy where Id=@Id";
             return await base.ExecuteAsync(tSql, new { Id = entity.Id, LastModified = entity.LastModified, LastModifiedBy = entity.LastModifiedBy });
+        }
+
+        public async Task<BasePaginationDto<User>> Filter(IEnumerable<Specification<User>> filters, int limit, int offset)
+        {
+            var tSql = @"select * from Users where deleted=0";
+            var result = await base.QueryAsync<User>(tSql);
+            var totalCount = result.Count();
+            var users = result.AsQueryable();
+            if (filters != null && users != null)
+            {
+                foreach (var filter in filters)
+                {
+                    users = users!.Where(filter.ToExpression());
+                }
+            }
+            var filteredResult = users!.Skip(limit).Take(offset);
+            return new BasePaginationDto<User>(filteredResult, totalCount);
         }
 
         public async Task<User> GetByIdAsync(Guid id)
@@ -50,8 +73,8 @@ namespace DOCSAN.INFRASTRUCTURE.Repositories
 
         public async Task<int> UpdateAsync(User entity)
         {
-            string tSql = @"update Users set Status=@Status,Mail=@Mail,Password=@Password,Role=@Role,LastModified=@LastModified,LastModifiedBy=@LastModifiedBy
-                           where Id=@Id and Deleted=0";
+            string tSql = @"update Users set Status=@Status,Mail=@Mail,Password=@Password,Role=@Role,LastModified=@LastModified,LastModifiedBy=@LastModifiedBy,
+                            FirstName=@FirstName,LastName=@LastName,BirthDate=@BirthDate,Gender=@Gender where Id=@Id and Deleted=0";
 
             var parameters = new DynamicParameters();
             parameters.Add("Id", entity.Id, DbType.Guid);          
@@ -62,6 +85,10 @@ namespace DOCSAN.INFRASTRUCTURE.Repositories
             parameters.Add("Role", entity.Role, DbType.Byte);
             parameters.Add("LastModified", entity.Created, DbType.DateTime);
             parameters.Add("LastModifiedBy", entity.CreatedBy, DbType.String);
+            parameters.Add("FirstName", entity.FirstName, DbType.String);
+            parameters.Add("LastName", entity.LastName, DbType.String);
+            parameters.Add("BirthDate", entity.BirthDate, DbType.DateTime);
+            parameters.Add("Gender", entity.Gender, DbType.Byte);
 
             return await base.ExecuteAsync(tSql, parameters);
         }

@@ -1,4 +1,6 @@
-﻿using DOCSAN.CORE.Entities;
+﻿using DOCSAN.APPLICATION.Dtos;
+using DOCSAN.CORE.Entities;
+using DOCSAN.SHARED.Utils;
 
 namespace DOCSAN.APPLICATION.Interfaces
 {
@@ -6,6 +8,6 @@ namespace DOCSAN.APPLICATION.Interfaces
     {
         Task<User> GetByMailAndPassword(string mail, string password);
 
-        //Task<BasePaginatedDto<User>> Filter(IEnumerable<Specification<User>> filters, int limit, int offset);
+        Task<BasePaginationDto<User>> Filter(IEnumerable<Specification<User>> filters, int limit, int offset);
     }
 }

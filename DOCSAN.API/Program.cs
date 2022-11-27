@@ -1,5 +1,7 @@
 using DOCSAN.API;
+using DOCSAN.API.Middlewares;
 using DOCSAN.APPLICATION;
+using DOCSAN.APPLICATION.Utils;
 using DOCSAN.INFRASTRUCTURE;
 using DOCSAN.INFRASTRUCTURE.Migrations;
 using DOCSAN.INFRASTRUCTURE.Services;
@@ -15,13 +17,16 @@ builder.Services.AddApplicationServices();
 builder.Services.AddSharedServices(builder.Configuration);
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddControllersWithViews();
 builder.Services.AddFluentMigratorCore()
                     .ConfigureRunner(
                     migrationBuilder => migrationBuilder
                     .AddSqlServer()
                     .WithGlobalConnectionString(builder.Configuration.GetConnectionString("SqlConnection"))
                     .WithMigrationsIn(typeof(TableMigration).Assembly));
+
+ServiceLocator.SetLocatorProvider(builder.Services.BuildServiceProvider());
+AuditHelper._context = () => ServiceLocator.Current.GetInstance<IHttpContextAccessor>();
+
 
 var app = builder.Build();
 app.MigrateDatabase(builder.Configuration);
@@ -37,6 +42,7 @@ if (app.Environment.IsDevelopment())
 
 }
 
+app.UseMiddleware<RequestIdentifierMiddleware>();
 app.UseAuthorization();
 
 app.MapControllers();

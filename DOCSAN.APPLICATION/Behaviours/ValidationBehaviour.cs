@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using DOCSAN.APPLICATION.Exceptions;
+using FluentValidation;
 using MediatR;
 
 namespace DOCSAN.APPLICATION.Behaviours
@@ -26,6 +27,9 @@ namespace DOCSAN.APPLICATION.Behaviours
                     .Where(r => r.Errors.Any())
                     .SelectMany(r => r.Errors)
                     .ToList();
+
+                if (failures.Any())
+                    throw new ModelValidationException(failures.DistinctBy(x=> x.PropertyName));
             }
             return await next();
         }

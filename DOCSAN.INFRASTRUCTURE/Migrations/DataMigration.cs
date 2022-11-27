@@ -29,9 +29,14 @@ namespace DOCSAN.INFRASTRUCTURE.Migrations
                     LastModifiedBy = (String?)null,
                     Status = true,
                     Mail = "john@doe.com",
+                    FirstName = "John",
+                    LastName = "Doe",
+                    BirthDate = DateTime.Parse("1990-09-25"),
                     Password = "1234aaaa", 
                     Deleted = false,
-                    Role = (int)SHARED.Enums.enmRole.Admin
+                    Role = (int)SHARED.Enums.enmRole.Admin,
+                    ImageUrl = String.Empty,
+                    Gender = (int) SHARED.Enums.enmGender.Male
                 });
         }
     }

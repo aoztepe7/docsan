@@ -35,11 +35,8 @@ namespace DOCSAN.INFRASTRUCTURE.Services
             return tokenHandler.WriteToken(token);
         }
 
-        public Guid ValidateToken(string token)
+        private SecurityToken? GetValidatedToken(string token)
         {
-            if (token == null)
-                return Guid.Empty;
-
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_jwtConfig.Secret);
             try
@@ -52,14 +49,40 @@ namespace DOCSAN.INFRASTRUCTURE.Services
                     ValidateAudience = false,
                     ClockSkew = TimeSpan.Zero
                 }, out SecurityToken validatedToken);
-                var jwtToken = (JwtSecurityToken)validatedToken;
-                var userId = Guid.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
-                return userId;
+                return validatedToken;
             }
             catch
             {
-                return Guid.Empty;
+                return null;
             }
+        }
+
+        public string GetUserMail(string token)
+        {
+            if (token == null)
+                return String.Empty;
+
+            var validatedToken = GetValidatedToken(token);
+            if (validatedToken == null)
+                return String.Empty;
+
+            var jwtToken = (JwtSecurityToken)validatedToken;
+            var userMail = jwtToken.Claims.First(x => x.Type == "mail").Value;
+            return userMail;
+        }
+
+        public Guid ValidateToken(string token)
+        {
+            if (token == null)
+                return Guid.Empty;
+
+            var validatedToken = GetValidatedToken(token);
+            if (validatedToken == null)
+                return Guid.Empty;
+
+            var jwtToken = (JwtSecurityToken)validatedToken;
+            var userId = Guid.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
+            return userId;
         }
     }
 }

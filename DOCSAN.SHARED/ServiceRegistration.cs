@@ -9,6 +9,7 @@ namespace DOCSAN.SHARED
         public static IServiceCollection AddSharedServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<JwtConfig>(configuration.GetSection("JwtConfig"));
+            services.Configure<AwsConfig>(configuration.GetSection("AwsConfig"));
             return services;
         }
     }

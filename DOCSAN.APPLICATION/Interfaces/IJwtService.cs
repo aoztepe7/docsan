@@ -11,5 +11,6 @@ namespace DOCSAN.APPLICATION.Interfaces
     {
         string GenerateToken(User user);
         Guid ValidateToken(string token);
+        string GetUserMail(string token);
     }
 }

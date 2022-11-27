@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Kl+pFoG9hubMo6PLDvilCjyhpdkx6V66thBtIuhWos2OXhZL7SWHttJ4qCIhdwCMruDumrYQoPw56uAPtqBhaQ==",
+  "dgSpecHash": "DKxNxxsU87ahCLp21haztus7ljZ/N02JH5SKVz308q/O3DAaeIuYyt2URT75BDaU3+RtMWHmgVmHMinbg3uerw==",
   "success": true,
   "projectFilePath": "C:\\Users\\ali.oztepe\\source\\repos\\DOCSAN.API\\DOCSAN.CORE\\DOCSAN.CORE.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ali.oztepe\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\ali.oztepe\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\ali.oztepe\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\ali.oztepe\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\ali.oztepe\\.nuget\\packages\\microsoft.extensions.configuration.binder\\7.0.0\\microsoft.extensions.configuration.binder.7.0.0.nupkg.sha512",
@@ -11,7 +13,8 @@
     "C:\\Users\\ali.oztepe\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\ali.oztepe\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\7.0.0\\microsoft.extensions.options.configurationextensions.7.0.0.nupkg.sha512",
     "C:\\Users\\ali.oztepe\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
-    "C:\\Users\\ali.oztepe\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\ali.oztepe\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\ali.oztepe\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

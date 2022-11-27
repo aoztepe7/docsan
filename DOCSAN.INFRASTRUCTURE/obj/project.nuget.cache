@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "KNxERzYMmM623vPs83GRnCKIS5eZSxmca73sQ+sD4JLlpVRvvARQbhWdAcr3OSHUYyAwsjwUpmhWORs358YM3w==",
+  "dgSpecHash": "zsGFc0ihG3INwDKGlhmkCtTVhhrf/gHd+SdI0tyO+U/laYFe/nwC5eRDZvy3rLzmAlI5fD636Gh9H+w90RdNng==",
   "success": true,
   "projectFilePath": "C:\\Users\\ali.oztepe\\source\\repos\\DOCSAN.API\\DOCSAN.INFRASTRUCTURE\\DOCSAN.INFRASTRUCTURE.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ali.oztepe\\.nuget\\packages\\awssdk.core\\3.7.100.22\\awssdk.core.3.7.100.22.nupkg.sha512",
+    "C:\\Users\\ali.oztepe\\.nuget\\packages\\awssdk.s3\\3.7.101.22\\awssdk.s3.3.7.101.22.nupkg.sha512",
     "C:\\Users\\ali.oztepe\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\ali.oztepe\\.nuget\\packages\\fluentmigrator\\3.3.2\\fluentmigrator.3.3.2.nupkg.sha512",
     "C:\\Users\\ali.oztepe\\.nuget\\packages\\fluentmigrator.abstractions\\3.3.2\\fluentmigrator.abstractions.3.3.2.nupkg.sha512",

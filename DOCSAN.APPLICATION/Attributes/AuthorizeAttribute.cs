@@ -1,4 +1,5 @@
-﻿using DOCSAN.APPLICATION.Messages.Common.Response;
+﻿using DOCSAN.APPLICATION.Interfaces;
+using DOCSAN.APPLICATION.Messages.Common.Response;
 using DOCSAN.CORE.Entities;
 using DOCSAN.SHARED.Enums;
 using Microsoft.AspNetCore.Http;

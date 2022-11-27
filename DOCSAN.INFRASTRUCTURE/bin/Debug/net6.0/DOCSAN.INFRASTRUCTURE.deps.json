@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "DOCSAN.INFRASTRUCTURE/1.0.0": {
         "dependencies": {
+          "AWSSDK.S3": "3.7.101.22",
           "DOCSAN.APPLICATION": "1.0.0",
           "Dapper": "2.0.123",
           "FluentMigrator": "3.3.2",
@@ -19,6 +20,25 @@
         },
         "runtime": {
           "DOCSAN.INFRASTRUCTURE.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.7.100.22": {
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.100.22"
+          }
+        }
+      },
+      "AWSSDK.S3/3.7.101.22": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.100.22"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.S3.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.101.22"
+          }
         }
       },
       "Dapper/2.0.123": {
@@ -1461,6 +1481,7 @@
       },
       "DOCSAN.SHARED/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
@@ -1477,6 +1498,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AWSSDK.Core/3.7.100.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oai1IoNeTQRmARF4bat2gUhawbx9cwid00Nthjhk+WdY4XiY51wAa+t8geApacB5mJEE+bO/Va/kYenOCWEisA==",
+      "path": "awssdk.core/3.7.100.22",
+      "hashPath": "awssdk.core.3.7.100.22.nupkg.sha512"
+    },
+    "AWSSDK.S3/3.7.101.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pvG9ZScKBBgs+givVFW87uEmHLevPHm6/urMwtDo4u3Z43zPpoXlleIjAVCXv2z/qpIbYi5KN1JSZAbmy5hOOg==",
+      "path": "awssdk.s3/3.7.101.22",
+      "hashPath": "awssdk.s3.3.7.101.22.nupkg.sha512"
     },
     "Dapper/2.0.123": {
       "type": "package",

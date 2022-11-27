@@ -8,6 +8,7 @@ namespace DOCSAN.SHARED.Enums
 {
     public enum enmRole : byte
     {
+        Undefined = 0,
         Admin = 1,
         Developer = 2,
         Analyst = 3,

@@ -11,8 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Handlers\Users\Commands\" />
-    <Folder Include="Messages\Common\Request\" />
     <Folder Include="Messages\Users\Request\" />
   </ItemGroup>
 

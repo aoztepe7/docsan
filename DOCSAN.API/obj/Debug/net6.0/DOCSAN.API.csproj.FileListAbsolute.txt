@@ -116,3 +116,5 @@ C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.API\bin\Debug\net6.0\Microsof
 C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.API\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
 C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.API\bin\Debug\net6.0\AWSSDK.Core.dll
+C:\Users\ali.oztepe\source\repos\DOCSAN.API\DOCSAN.API\bin\Debug\net6.0\AWSSDK.S3.dll

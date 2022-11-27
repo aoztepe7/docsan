@@ -13,6 +13,8 @@ namespace DOCSAN.INFRASTRUCTURE
         {
             services.AddSingleton<DatabaseMigration>();
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IProjectRepository, ProjectRepository>();
+            services.AddTransient<IAwsS3Service, AwsS3Service>();
             services.AddTransient<IJwtService, JwtService>();
             //services.AddTransient<IMailService, MailService>();
             return services;

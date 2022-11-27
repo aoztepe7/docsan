@@ -13,6 +13,7 @@ namespace DOCSAN.INFRASTRUCTURE.Migrations
         public override void Up()
         {
             CreateUserTable();
+            CreateProjectTable();
         }
 
         private void CreateUserTable()
@@ -27,7 +28,26 @@ namespace DOCSAN.INFRASTRUCTURE.Migrations
                 .WithColumn("Deleted").AsBoolean().NotNullable()
                 .WithColumn("Mail").AsString(50).NotNullable().Unique()
                 .WithColumn("Password").AsString(20).NotNullable()
-                .WithColumn("Role").AsInt16();
+                .WithColumn("FirstName").AsString(30).Nullable()
+                .WithColumn("LastName").AsString(30).Nullable()
+                .WithColumn("BirthDate").AsDateTime().Nullable()
+                .WithColumn("Gender").AsInt16().Nullable()
+                .WithColumn("ImageUrl").AsString().Nullable()
+                .WithColumn("Role").AsInt16().NotNullable();
+        }
+
+        private void CreateProjectTable()
+        {
+            Create.Table("Projects")
+               .WithColumn("Id").AsGuid().NotNullable().PrimaryKey()
+               .WithColumn("Created").AsDateTime().NotNullable()
+               .WithColumn("CreatedBy").AsString().Nullable()
+               .WithColumn("LastModified").AsDateTime().Nullable()
+               .WithColumn("LastModifiedBy").AsString().Nullable()
+               .WithColumn("Status").AsBoolean().Nullable()
+               .WithColumn("Deleted").AsBoolean().NotNullable()
+               .WithColumn("Name").AsString(50).NotNullable().Unique()
+               .WithColumn("ImageUrl").AsString(255).Nullable();
         }
     }
 }

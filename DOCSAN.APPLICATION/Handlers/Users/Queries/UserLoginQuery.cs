@@ -1,4 +1,5 @@
 ﻿using DOCSAN.APPLICATION.Dtos;
+using DOCSAN.APPLICATION.Exceptions;
 using DOCSAN.APPLICATION.Interfaces;
 using DOCSAN.APPLICATION.Messages.Common.Response;
 using DOCSAN.APPLICATION.Messages.Users.Response;
@@ -30,6 +31,9 @@ namespace DOCSAN.APPLICATION.Handlers.Users.Queries
         public async Task<BaseDataResponse<UserLoginResponse>> Handle(UserLoginQuery request, CancellationToken cancellationToken)
         {
             var user = await _userRepository.GetByMailAndPassword(request.Mail, request.Password);
+
+            if (user == null)
+                throw new InvalidCredentialsException();
 
             var token = _jwtService.GenerateToken(user);
             return new BaseDataResponse<UserLoginResponse>(new UserLoginResponse { Token = token, User = user.Adapt<UserDto>() }, 200);
